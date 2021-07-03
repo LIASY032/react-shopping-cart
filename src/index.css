@@ -2,7 +2,6 @@
 
 html {
   font-size: 62.5%;
-  font-size: 62.5%;
   box-sizing: border-box;
 }
 body,
@@ -119,4 +118,15 @@ footer {
 }
 .button.primary {
   background-color: #f0c040;
+}
+/* Filter */
+.filter {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 0.1rem #c0c0c0 solid;
+}
+.filter div {
+  flex: 1;
 }
