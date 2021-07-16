@@ -1,6 +1,6 @@
 // feature 1
 import React from "react";
-import data from "./data.json";
+
 import Products from "./components/Products";
 import Filter from "./components/Filter";
 import Cart from "./components/Cart";
