@@ -38,7 +38,7 @@ export default class Cart extends Component {
         )}
         <div>
           <div className="cart">
-            <Fade left cascade={true}>
+            <Fade left cascade>
               <ul className="cart-items">
                 {cartItems.map((item) => (
                   <li key={item._id}>
@@ -83,8 +83,8 @@ export default class Cart extends Component {
                 </div>
               </div>
               {this.state.showCheckout && (
-                <div className="cart">
-                  <Fade right cascade>
+                <Fade right cascade>
+                  <div className="cart">
                     <form onSubmit={this.createOrder}>
                       <ul className="form-container">
                         <li>
@@ -121,8 +121,8 @@ export default class Cart extends Component {
                         </li>
                       </ul>
                     </form>
-                  </Fade>
-                </div>
+                  </div>
+                </Fade>
               )}
             </div>
           )}

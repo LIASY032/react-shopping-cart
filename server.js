@@ -12,29 +12,21 @@ mongoose.connect("mongodb://localhost/react-shopping-cart-db", {
   useUnifiedTopology: true,
 });
 
-const productSchema = new mongoose.Schema({
-  _id: { type: String, default: shortid.generate() },
-  title: String,
-  description: String,
-  image: String,
-  price: Number,
-  availableSizes: [String],
-});
-
-const Product = mongoose.model("products", productSchema);
+const Product = mongoose.model(
+  "products",
+  new mongoose.Schema({
+    _id: { type: String, default: shortid.generate },
+    title: String,
+    description: String,
+    image: String,
+    price: Number,
+    availableSizes: [String],
+  })
+);
 
 app.get("/api/products", async (req, res) => {
   const products = await Product.find({});
-  console.log(products);
   res.send(products);
-  //   try {
-  //     const products = await Product.find({});
-  //     console.log(products);
-  //     res.send(products);
-  //   } catch (e) {
-  //     res.send({});
-  //   }
-  //   res.send({ name: "shabi" });
 });
 
 app.post("/api/products", async (req, res) => {
